@@ -1,1 +1,21 @@
-<p>register works!</p>
+<div class="well">
+        <div class="row text-center">
+            <h1><i class="glyphicon glyphicon-user"></i></h1>
+            <h1>注册</h1>
+        </div>
+        <form class="form-group" #f="ngForm" (submit)="registe(f.value)">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">用户名：</span>
+                <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" name="username" [(ngModel)]="register.username">
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">密 &nbsp;&nbsp;码：</span>
+                <input type="password" class="form-control" placeholder="password" aria-describedby="basic-addon1"name="password" [(ngModel)]="register.password">
+            </div>
+            <br>
+            <div class="row">
+                <input type="submit" class="btn btn-primary btn-block" value="注册">
+            </div>
+        </form>
+    </div>

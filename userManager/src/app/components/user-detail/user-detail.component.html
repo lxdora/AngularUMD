@@ -1,6 +1,6 @@
 <div class="well">
-    <a type="text" class="btn btn-success btn-block" routerLink="/edituser">编辑</a>
-    <a type="text" class="btn btn-danger btn-block">删除</a>
+    <a type="text" class="btn btn-success btn-block" [routerLink]="['/edituser',id]">编辑</a>
+    <a type="text" class="btn btn-danger btn-block" (click)="deleteUser(id)">删除</a>
 </div>
 <br>
 <div class="well">

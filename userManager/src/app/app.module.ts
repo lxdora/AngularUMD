@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,13 +15,17 @@ import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
 import { Routes, RouterModule } from '@angular/router';
 import { UserService } from './servers/user.service';
+import { AuthGuard } from './auth.guard';
+import { LoginService } from './servers/login.service';
+import { AuthService } from './servers/auth.service';
+import { RegisterService } from './servers/register.service';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'users', component: UsersComponent},
-  { path: 'users/:id', component: UserDetailComponent},
-  { path: 'adduser', component: AddUserComponent},
-  { path: 'edituser', component: EditUserComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
+  { path: 'users/:id', component: UserDetailComponent, canActivate: [AuthGuard]},
+  { path: 'adduser', component: AddUserComponent, canActivate: [AuthGuard]},
+  { path: 'edituser/:id', component: EditUserComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent}
 ];
@@ -41,9 +46,10 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [UserService],
+  providers: [UserService, LoginService, AuthService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

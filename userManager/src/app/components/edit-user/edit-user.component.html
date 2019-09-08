@@ -1,1 +1,24 @@
-<p>edit-user works!</p>
+<div class="well">
+    <form class="form-group" #f="ngForm" (submit)="updateUser(user.id,f.value)">
+        <div class="row">
+            <label for="name">姓名：</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="user.name">
+        </div>
+        <div class="row">
+            <label for="name">邮箱：</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="user.email">
+        </div>
+        <div class="row">
+            <label for="name">电话：</label>
+            <input type="text" class="form-control" name="phone" [(ngModel)]="user.phone">
+        </div>
+        <div class="row">
+            <label for="name">公司：</label>
+            <input type="text" class="form-control" name="company" [(ngModel)]="user.company">
+        </div>
+        <br>
+        <div class="row">
+            <input type="submit" value="提交" class="btn btn-block btn-primary">
+        </div>
+    </form>    
+</div>

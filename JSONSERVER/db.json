@@ -1,19 +1,11 @@
 {
-    "users":[
+  "users": [
     {
-      "id": 1,
-      "name": "Leanne Graham",
-      "username": "Bret",
-      "email": "Sincere@april.biz",
-      "address": {
-        "street": "Kulas Light",
-        "suite": "Apt. 556",
-        "city": "Gwenborough",
-        "zipcode": "92998-3874"
-      },
+      "name": "lixiang",
+      "email": "124545@qq.com",
       "phone": "1-770-736-8031 x56442",
-      "website": "hildegard.org",
-      "company": "Romaguera-Crona"
+      "company": "google",
+      "id": 1
     },
     {
       "id": 2,
@@ -67,7 +59,7 @@
       "email": "Telly.Hoeger@billy.biz",
       "phone": "210.067.6132",
       "website": "elvis.io",
-      "company":  "Johns Group"
+      "company": "Johns Group"
     },
     {
       "id": 8,
@@ -94,7 +86,19 @@
       "email": "Rey.Padberg@karina.biz",
       "phone": "024-648-3804",
       "website": "ambrose.net",
-      "company":  "Hoeger LLC"
+      "company": "Hoeger LLC"
+    }
+  ],
+  "registers": [
+    {
+      "id": 1,
+      "username": "aaa",
+      "password": "bbb"
+    },
+    {
+      "username": "bbb",
+      "password": "ccc",
+      "id": 2
     }
   ]
 }
